@@ -38,7 +38,6 @@ if(false){
 //Capitulo 2
 let frutas  = ["banana","manzana","mango"];
 //document.write(frutas[9]);
-
 let pc ={
  nombre:"Jona PC",
  procesador : "Inte core i7",
@@ -61,9 +60,7 @@ numero=0;
 do{
 	numero++;
 	//document.write("numero:"+numero+"<br>");
-
 }while(numero<10);
-
 /*for (let i = 0; i < 6 ; i++) {
 	 //document.write(i+"<br>");
 }*/
@@ -82,15 +79,47 @@ for(fruta of frutas){
  	document.write(fruta+"<br>");
 }
 
+function suma(a,b){
+	return a+b;
+}
+
+function mostrarNombre(n){
+	document.getElementById("mensaje").innerHTML = n.country[0].country_id;
+}
+
+async function traerPais(){
+	const respuesta = await fetch("https://api.nationalize.io/pollos?name=vladimir");
+	if(!respuesta.OK){
+		let oops = "404 no encontre nada";
+		alert(oops);	
+		throw new Error(oops);
+	}
+	const nombre = respuesta.json();
+	return nombre;
+}
+
+//traerPais().then(mostrarNombre);
+
+
+const saludar = function(){
+	console.log("example");
+}
+
+
+const say = nombre => `hola woow ${nombre}`;
+
+console.log(say("jonathan"));
+
+const perro ={
+
+		nombre:"kenai",
+		ladrar:()=>{console.log(this)}
+		
+}
 
 
 
-
-
-
-
-
-
+perro.ladrar();
 
 
 
